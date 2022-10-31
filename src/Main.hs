@@ -222,8 +222,9 @@ main :: IO ()
 main = do
   putStrLn "Selecciona un nivel \n a)Facil \n b)Dificil"
   dificultad <- getChar
-  let dif = if dificultad == 'a' then "assets/level" else if dificultad == 'b' then "assets/level2" else error "Escribe una opcion valida"
-  rawData <- readFile dif
+  let nivel = if dificultad == 'a' then "assets/level" else if dificultad == 'b' 
+                then "assets/level2" else error "Escribe una opcion valida"
+  rawData <- readFile nivel
   imagenPiso <- loadBMP "assets/pared.bmp"
   imagenMoneda <- loadBMP "assets/bit.bmp"
   left1 <- loadBMP "assets/14i.bmp"
