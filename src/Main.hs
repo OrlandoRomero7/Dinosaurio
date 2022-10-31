@@ -109,7 +109,7 @@ esDerecha _ = 0
 teclas :: Event -> EstadoJuego -> EstadoJuego
 teclas (EventKey (SpecialKey KeyLeft) Down _ _) gs = gs {direccion = Oeste, viendo = VerOeste}
 teclas (EventKey (SpecialKey KeyRight) Down _ _) gs = gs {direccion = Este, viendo = VerEste}
-teclas (EventKey (SpecialKey KeySpace) Down _ _) gs =
+teclas (EventKey (SpecialKey KeyUp) Down _ _) gs =
   gs
     { velocidadY =
         if esColision gs (fst (posicion gs), snd (posicion gs) + velocidadY gs) 'a'
